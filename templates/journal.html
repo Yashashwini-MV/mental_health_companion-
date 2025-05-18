@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Journal Entry</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #e0c3fc, #8ec5fc);
+      margin: 0;
+      padding: 0;
+    }
+
+    .journal-container {
+      max-width: 600px;
+      margin: 60px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(123, 63, 143, 0.3);
+    }
+
+    h2 {
+      text-align: center;
+      color: #7b3f8f;
+    }
+
+    textarea {
+      width: 100%;
+      height: 300px;
+      font-size: 1rem;
+      padding: 15px;
+      border-radius: 10px;
+      border: 2px solid #b285d1;
+      resize: vertical;
+    }
+
+    input[type="date"] {
+      font-size: 1rem;
+      padding: 10px;
+      border: 2px solid #b285d1;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      width: 100%;
+    }
+
+    button {
+      background-color: #7b3f8f;
+      color: white;
+      font-size: 1rem;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      display: block;
+      margin: 0 auto;
+    }
+
+    button:hover {
+      background-color: #9c5ec2;
+    }
+  </style>
+</head>
+<body>
+  <div class="journal-container">
+    <h2>Write in Your Journal 📝</h2>
+    <input type="date" id="journalDate" required>
+    <textarea id="journalEntry" placeholder="Write anything you feel today..."></textarea>
+    <br><br>
+    <button onclick="saveJournal()">Save Entry</button>
+  </div>
+
+  <script src="{{ url_for('static', filename='journal.js') }}"></script>
+</body>
+</html>

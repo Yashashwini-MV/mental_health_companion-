@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Chatbot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="center-page">
+    <h1>Welcome to the Mental Health Chatbot</h1>
+    <div class="container vertical">
+        <p>Your safe space to talk, relax, and find helpful resources.</p>
+        <a href="{{ url_for('chat_page') }}" class="btn">Start Chat</a>
+        <a href="{{ url_for('games') }}" class="btn">Relax with Games</a>
+        <a href="{{ url_for('resources') }}" class="btn">Mental Health Resources</a>
+        <a href="{{ url_for('write_journal') }}" class="btn">Write in Journal</a>
+    </div>
+    <!-- Popup HTML -->
+<div class="popup" id="popupMessage">
+    <div class="popup-content">
+      <p id="messageText"></p>
+      <button onclick="closePopup()">Close</button>
+    </div>
+  </div>
+  
+  <!-- Link the popup script and style -->
+  <script src="{{ url_for('static', filename='popup.js') }}"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='popup.css') }}">
+  
+</body>
+
+</html>

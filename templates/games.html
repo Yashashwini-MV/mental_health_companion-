@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relaxing Games</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="center-page">
+    <h1>Relaxing Games</h1>
+    <div class="container vertical">
+        <a href="{{ url_for('bubble_game') }}" class="btn">Bubble Popping Game</a>
+        <a href="{{ url_for('coloring_game') }}" class="btn">Coloring Game</a>
+        <a href="{{ url_for('puzzle_game') }}" class="btn">Puzzle Game</a>
+    </div>
+</body>
+
+</html>

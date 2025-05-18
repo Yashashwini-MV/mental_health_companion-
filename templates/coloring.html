@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Coloring Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='coloring.js') }}" defer></script>
+</head>
+<body>
+    <h1>Coloring Game</h1>
+
+    <div id="toolbar">
+        <button class="color" data-color="#ff4d4d" style="background: #ff4d4d;"></button>
+        <button class="color" data-color="#4d79ff" style="background: #4d79ff;"></button>
+        <button class="color" data-color="#33cc33" style="background: #33cc33;"></button>
+        <button class="color" data-color="#ffcc00" style="background: #ffcc00;"></button>
+        <button class="color" data-color="#ff99ff" style="background: #ff99ff;"></button>
+        <button class="color" data-color="#000000" style="background: #000000;"></button>
+        <button class="color" data-color="#ffffff" style="background: #ffffff;">🧽</button> <!-- Eraser -->
+        <button id="clear">Clear All</button>
+    </div>
+
+    <canvas id="canvas" width="800" height="500"></canvas>
+</body>
+</html>
