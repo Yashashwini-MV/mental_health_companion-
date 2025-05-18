@@ -1,0 +1,40 @@
+<!-- templates/chat.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mental Health Chatbot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body class="chat-body">
+    <div class="chat-container">
+        <div class="chat-header">🌸 Your Friendly Mental Health Buddy</div>
+        <div class="chat-box" id="chat-box"></div>
+        <form id="chat-form">
+            <input type="text" id="user-input" placeholder="Type your thoughts..." autocomplete="off" required />
+            <button type="submit">Send</button>
+        </form>
+    </div>
+
+    <script>
+        $("#chat-form").submit(function(e) {
+            e.preventDefault();
+            const userMsg = $("#user-input").val();
+            $("#chat-box").append(`<div class="user-bubble">${userMsg}</div>`);
+            $("#user-input").val("");
+
+            $.post("/get", { msg: userMsg }, function(data) {
+                const botMsg = data.response;
+                let typing = $('<div class="bot-bubble typing">Typing...</div>');
+                $("#chat-box").append(typing);
+                setTimeout(() => {
+                    typing.remove();
+                    $("#chat-box").append(`<div class="bot-bubble">${botMsg}</div>`);
+                    $("#chat-box").scrollTop($("#chat-box")[0].scrollHeight);
+                }, 1000);
+            });
+        });
+    </script>
+</body>
+</html>

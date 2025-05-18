@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Puzzle Game</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+  <script src="{{ url_for('static', filename='puzzle.js') }}" defer></script>
+</head>
+<body>
+  <div class="puzzle-wrapper">
+    <h1>Puzzle Game 🧩</h1>
+
+    <div class="controls">
+      <label for="size-select">Choose grid size:</label>
+      <select id="size-select">
+        <option value="4">4x4</option>
+        <option value="6">6x6</option>
+        <option value="8">8x8</option>
+      </select>
+      <button onclick="generatePuzzle()">Generate</button>
+      <button onclick="shuffle()">Shuffle</button>
+      <button onclick="checkSolution()">Check Solution</button>
+    </div>
+
+    <div id="puzzle-container"></div>
+    <p class="hint">Arrange the pieces to solve the puzzle! ✨</p>
+  </div>
+</body>
+</html>
