@@ -1,0 +1,382 @@
+body {
+    
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #d4bfff, #a5d7ff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+/* For Chat page vertical centering */
+body.chat-page {
+    flex-direction: column;
+}
+
+/* Journal card styling */
+.journal-container {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+/* Title */
+.journal-container h2 {
+    color: #7e3ff2;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+/* Date input */
+#date {
+    padding: 0.75rem;
+    border: 2px solid #c49cfa;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+/* Text area */
+#entry {
+    min-height: 200px;
+    padding: 1rem;
+    font-size: 1rem;
+    border: 2px solid #c49cfa;
+    border-radius: 10px;
+    resize: vertical;
+    margin-bottom: 1.5rem;
+}
+
+/* Buttons */
+button {
+    padding: 0.75rem;
+    background-color: #7e3ff2;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background-color: #6b2be9;
+}
+
+/* Puzzle styles */
+.puzzle-wrapper {
+    padding: 30px;
+    background-color: #fff0ff;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(123, 63, 143, 0.2);
+}
+
+#puzzle-container {
+    display: grid;
+    gap: 2px;
+    width: 400px;
+    height: 400px;
+    margin: 30px auto;
+    border: 4px solid #7b3f8f;
+    border-radius: 10px;
+}
+
+.puzzle-piece {
+    background-color: #dab6fc;
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #7b3f8f;
+    border-radius: 6px;
+    cursor: pointer;
+    user-select: none;
+    transition: transform 0.2s ease;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+}
+
+.puzzle-piece:hover {
+    transform: scale(1.05);
+}
+
+.controls {
+    margin-bottom: 15px;
+}
+
+.hint {
+    margin-top: 10px;
+    font-style: italic;
+    color: #6c4a7f;
+}
+
+h1 {
+    color: #7b3f8f;
+    margin-top: 20px;
+}
+
+/* Resource styles */
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.resource {
+    margin: 15px 0;
+    padding: 10px;
+    border-left: 5px solid #7b3f8f;
+    background: #f8f8f8;
+    border-radius: 5px;
+}
+
+/* Links */
+a {
+    text-decoration: none;
+    color: #7b3f8f;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Bubble Game */
+#game-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.bubble {
+    position: absolute;
+    border-radius: 50%;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
+    cursor: pointer;
+    animation: fadeIn 0.5s ease;
+}
+
+.bubble:hover {
+    transform: scale(1.1);
+}
+
+.bubble.popped {
+    animation: pop 0.2s forwards;
+}
+
+@keyframes pop {
+    to {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Coloring Game */
+#toolbar {
+    margin-bottom: 10px;
+}
+
+button.color {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+button.color:hover {
+    outline: 2px solid #999;
+}
+
+#clear {
+    margin-left: 10px;
+    padding: 5px 10px;
+    border-radius: 8px;
+    border: none;
+    background-color: #7b3f8f;
+    color: white;
+    cursor: pointer;
+}
+
+canvas {
+    border: 2px solid #7b3f8f;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(123, 63, 143, 0.2);
+}
+
+/* Centering layout for home and games list pages */
+body.center-page {
+    background: linear-gradient(to right, #fbeaff, #d8c3ff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.container.vertical {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(123, 63, 143, 0.2);
+}
+
+/* Style for buttons */
+.btn {
+    background-color: #7b3f8f;
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #9d5cc5;
+}
+/* static/style.css */
+body.chat-body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #e0c3fc, #8ec5fc);
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.chat-container {
+    width: 90%;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(138, 43, 226, 0.3);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.chat-header {
+    background: #b38df7;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 1.3em;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.chat-box {
+    flex-grow: 1;
+    padding: 15px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: #faf3ff;
+}
+
+.user-bubble, .bot-bubble {
+    max-width: 80%;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-size: 0.95em;
+    line-height: 1.4em;
+    word-wrap: break-word;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.user-bubble {
+    align-self: flex-end;
+    background-color: #d1b3ff;
+    color: white;
+}
+
+.bot-bubble {
+    align-self: flex-start;
+    background-color: #e0e0ff;
+    color: #333;
+}
+
+.typing {
+    font-style: italic;
+    opacity: 0.6;
+}
+
+form {
+    display: flex;
+    border-top: 1px solid #ccc;
+    background: #f5f5ff;
+    padding: 10px;
+}
+
+input[type="text"] {
+    flex: 1;
+    border: none;
+    padding: 10px;
+    border-radius: 30px;
+    outline: none;
+    font-size: 1em;
+    margin-right: 10px;
+    background: #fff;
+    box-shadow: inset 0 0 5px #d0a0f0;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    background-color: #b38df7;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background-color: #9b6df5;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
