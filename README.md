@@ -20,8 +20,7 @@ Whether you need a chat, a space to journal, a fun distraction, or just a little
 ## 🛠️ Tech Stack
 
 - **Backend**: Python, Flask  
-- **Frontend**: HTML, CSS, JavaScript  
-- **Templating**: Jinja2  
+- **Frontend**: HTML, CSS, JavaScript    
 - **Database**: SQLite (`journal_entries.db`)  
 - **AI Integration**: Groq API for chatbot  
 
@@ -30,5 +29,19 @@ Whether you need a chat, a space to journal, a fun distraction, or just a little
 ## Create .env file
 
 GROQ_API_KEY=your_secret_key
+
+---
+
+## ✨ Final Words
+
+This project is more than just code — it's a companion, a safe space, and a gentle reminder that **your mental health matters**.
+
+Whether you're building this for yourself, for others, or for a community.
+
+Keep taking care of your mind, heart, and soul. And if this app helps even one person smile — it's a success. 🌈
+
+Made with 💛 and Python.
+
+---
 
 
